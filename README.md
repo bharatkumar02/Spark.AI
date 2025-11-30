@@ -34,3 +34,8 @@ As part of the assignment requirements, I analyzed several leading AI interfaces
    Dynamic UI: Auto-scrolling to the latest message.
    Theme Switcher: Toggles between Dark (bg-zinc-950) and Light (bg-gray-50) modes.
    Optimized Assets: Using Lucide-React for lightweight SVG icons.
+
+
+   ### Live Website Link
+
+   [Spark.AI](https://spark-ai-7ic5.vercel.app/)
