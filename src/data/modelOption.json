@@ -1,0 +1,20 @@
+[
+  {
+    "id": "spark-4",
+    "name": "Spark-4",
+    "description": "Most capable model",
+    "icon": "FlaskConical"
+  },
+  {
+    "id": "spark-3.5",
+    "name": "Spark-3.5",
+    "description": "Great for everyday tasks",
+    "icon": "Zap"
+  },
+  {
+    "id": "spark-2",
+    "name": "Spark-2",
+    "description": "Best for coding",
+    "icon": "Braces"
+  }
+]

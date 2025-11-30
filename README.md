@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# Tech Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Framework: React.js (Vite)
+Language: TypeScript
+Styling: Tailwind CSS
+Icons: Lucide-React
+State Management: React Hooks (useState, useEffect, Custom Hooks)
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Design Process & Research
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+As part of the assignment requirements, I analyzed several leading AI interfaces to inform the design decisions for Spark.AI.
 
-## Expanding the ESLint configuration
+1. Competitive Analysis
+   I reviewed the following AI User Interfaces:
+   ChatGPT (OpenAI)
+   Summary: Sets the industry standard with a clean, centered chat layout and a history sidebar that can be hidden. Focuses purely on the conversation flow.
+   Copilot
+   Summary: Uses warmer tones and serif fonts to feel more "human." Standout feature is the "Artifacts" view where code/documents open in a side panel.
+   
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. Selected Features for Spark.AI
+   Based on the analysis above, I combined the following 5 key features into my design:
+   Collapsible Sidebar: Inspired by ChatGPT, giving users the ability to focus entirely on the chat or access history when needed.
+   Typewriter Effect: Mimics the token-by-token generation of LLMs to make the bot feel "alive" rather than displaying static text blocks instantly.
+   Dark & Light Mode Support: Essential for accessibility and user preference, utilizing Tailwind's dark: class strategy with smooth color transitions.
+   Responsive Mobile Layout: A mobile-first approach where the sidebar becomes an overlay on smaller screens (hamburger menu), ensuring usability on all devices.
+   Clean, Distraction-Free Typography: Using high contrast for text and subtle backgrounds (Zinc/Slate palettes) to reduce eye strain during long usage.
+   
+   
+   ### Key Functionalities implemented
+   Simulated AI Logic: A custom hook (useChat.ts) simulates API latency and message handling.
+   Dynamic UI: Auto-scrolling to the latest message.
+   Theme Switcher: Toggles between Dark (bg-zinc-950) and Light (bg-gray-50) modes.
+   Optimized Assets: Using Lucide-React for lightweight SVG icons.
